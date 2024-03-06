@@ -9,7 +9,9 @@ CONFIG -= app_bundle
 
 SOURCES += \
         circle.cpp \
+        factory.cpp \
         figure.cpp \
+        figures.cpp \
         main.cpp \
         rectangle.cpp
 
@@ -20,5 +22,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     circle.h \
+    factory.h \
     figure.h \
+    figures.h \
     rectangle.h

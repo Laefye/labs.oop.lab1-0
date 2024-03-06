@@ -24,9 +24,12 @@ private:
     std::string name;
 public:
     Figure();
+    virtual ~Figure();
 
     virtual float getArea();
     virtual std::string getParameters();
+
+    std::string getFigureName();
 };
 
 #endif // FIGURE_H

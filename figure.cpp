@@ -20,10 +20,18 @@ Figure::Figure() {
     };
 }
 
+Figure::~Figure() {
+
+}
+
 float Figure::getArea() {
     return 0;
 }
 
 std::string Figure::getParameters() {
     return name;
+}
+
+std::string Figure::getFigureName()  {
+    return "TODO";
 }

@@ -2,6 +2,14 @@
 #include <iostream>
 #include <cmath>
 
+CircleFactory::CircleFactory() : Factory("Circle") {
+
+}
+
+void CircleFactory::create(Figure*& output) {
+    output = new Circle();
+}
+
 Circle::Circle() {
     std::cout << "Radius: ";
     if (!(std::cin >> this->radius) || this->radius <= 0) {

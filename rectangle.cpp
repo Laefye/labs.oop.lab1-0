@@ -1,6 +1,14 @@
 #include "rectangle.h"
 #include <iostream>
 
+RectangleFactory::RectangleFactory() : Factory("Rectangle") {
+
+}
+
+void RectangleFactory::create(Figure*& output) {
+    output = new Rectangle();
+}
+
 Rectangle::Rectangle() {
     std::cout << "Left Top (x, y): ";
     if (!(std::cin >> this->leftTop.x >> this->leftTop.y)) {
