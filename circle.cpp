@@ -1,30 +1,18 @@
 #include "circle.h"
-#include <iostream>
 #include <cmath>
 
-CircleFactory::CircleFactory() : Factory("Circle") {
-
+IncorrectCircleRadius::IncorrectCircleRadius() {
+    reason = "Radius can't be non positive";
 }
 
-void CircleFactory::create(Figure*& output) {
-    output = new Circle();
-}
-
-Circle::Circle() {
-    std::cout << "Radius: ";
-    if (!(std::cin >> this->radius) || this->radius <= 0) {
-        throw InputException("Radius is incorrect");
-    };
-    std::cout << "Center (x, y): ";
-    if (!(std::cin >> this->center.x >> this->center.y)) {
-        throw InputException("Center is incorrect");
+Circle::Circle(const Params& params) : Figure(params) {
+    params.get("center", this->center);
+    params.get("radius", this->radius);
+    if (this->radius <= 0) {
+        throw IncorrectCircleRadius();
     }
 }
 
-std::string Circle::getParameters() {
-    return Figure::getParameters() + " Radius: " + std::to_string(radius) + " Center: " + center.toString();
-}
-
-float Circle::getArea() {
-    return M_PI * radius * radius;
+double Circle::getArea() const {
+    return M_PI * this->radius * this->radius;
 }

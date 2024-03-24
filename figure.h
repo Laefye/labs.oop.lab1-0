@@ -1,35 +1,15 @@
 #ifndef FIGURE_H
 #define FIGURE_H
-#include <string>
-#include <exception>
+#include "params.h"
 
-struct Point {
-    float x;
-    float y;
-
-    std::string toString();
-};
-
-class InputException : public std::exception {
-private:
-    const char* reason;
-public:
-    InputException(const char* reason);
-
-    const char* what() const noexcept override;
-};
-
-class Figure {
+class Figure
+{
 private:
     std::string name;
 public:
-    Figure();
-    virtual ~Figure();
+    Figure(const Params& params);
 
-    virtual float getArea();
-    virtual std::string getParameters();
-
-    std::string getFigureName();
+    virtual double getArea() const = 0;
 };
 
 #endif // FIGURE_H

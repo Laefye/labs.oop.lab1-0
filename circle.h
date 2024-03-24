@@ -1,25 +1,22 @@
 #ifndef CIRCLE_H
 #define CIRCLE_H
 #include "figure.h"
-#include "factory.h"
+#include "point.h"
 
-class Circle : public Figure {
-private:
-    float radius;
-    Point center;
+class IncorrectCircleRadius : public BadParams {
 public:
-    Circle();
-
-    float getArea() override;
-
-    std::string getParameters() override;
+    IncorrectCircleRadius();
 };
 
-class CircleFactory : public Factory {
+class Circle : public Figure
+{
+private:
+    Point center;
+    double radius;
 public:
-    CircleFactory();
+    Circle(const Params& params);
 
-    void create(Figure*& output) override;
+    double getArea() const override;
 };
 
 #endif // CIRCLE_H
