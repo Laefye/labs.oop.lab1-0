@@ -4,6 +4,9 @@
 #include <string>
 #include <iostream>
 #include <memory>
+#include "paramsfrominput.h"
+#include "circle.h"
+#include "rectangle.h"
 
 
 class Menu;
@@ -16,11 +19,16 @@ class Menu
 private:
     std::vector<std::shared_ptr<Option>> options;
     bool isOpened = false;
-    void add(const std::shared_ptr<Option>& option);
+    ParamsFromInput params;
+    std::vector<std::shared_ptr<Factory>> factories;
+
+    void close();
+
+    void createFigure();
 public:
     Menu();
     void open();
-    void close();
+
 };
 
 #endif // MENU_H

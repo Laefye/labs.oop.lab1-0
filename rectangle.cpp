@@ -18,3 +18,12 @@ double Rectangle::getArea() const {
     double height = this->leftTop.y - this->rightBottom.y;
     return width * height;
 }
+
+RectangleFactory::RectangleFactory(const Params& params) : Factory("Rectangle", params) {
+
+}
+
+std::shared_ptr<Figure> RectangleFactory::create() {
+    return std::shared_ptr<Figure>(new Rectangle(this->getParams()));
+}
+
