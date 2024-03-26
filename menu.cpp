@@ -1,13 +1,8 @@
 #include "menu.h"
 
-Option::Option(const std::string& name) : name(name) {
-
+Menu::Menu() {
+    add(std::shared_ptr<Option>(new Option("pized", &Menu::close)));
 }
-
-const std::string& Option::getName() {
-    return this->name;
-}
-
 
 void Menu::add(const std::shared_ptr<Option>& option) {
     this->options.push_back(option);
@@ -16,14 +11,14 @@ void Menu::add(const std::shared_ptr<Option>& option) {
 void Menu::open() {
     size_t i = 1;
     for (std::shared_ptr<Option>& option : this->options) {
-        std::cout << i++ << ") " << option->getName() << std::endl;
+        std::cout << i++ << ") " << option->first << std::endl;
     }
     this->isOpened = true;
     while (this->isOpened) {
         std::cout << "Choice: ";
         size_t choice;
         if (std::cin >> choice && choice >= 1 && choice <= this->options.size()) {
-            this->options[choice - 1]->use(*this);
+            (this->*(this->options[choice - 1]->second))();
         }
     }
 }

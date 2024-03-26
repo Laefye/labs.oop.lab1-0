@@ -3,10 +3,10 @@
 #include <algorithm>
 #include "paramsfrominput.h"
 #include "rectangle.h"
-#include "mainmenu.h"
+#include "menu.h"
 
 int main()
 {
-    MainMenu menu;
+    Menu menu;
     menu.open();
 }

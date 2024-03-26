@@ -16,3 +16,11 @@ Circle::Circle(const Params& params) : Figure(params) {
 double Circle::getArea() const {
     return M_PI * this->radius * this->radius;
 }
+
+CircleFactory::CircleFactory(const Params& params) : Factory("Circle", params) {
+
+}
+
+std::shared_ptr<Figure> CircleFactory::create() {
+    return std::shared_ptr<Figure>(new Circle(this->getParams()));
+}

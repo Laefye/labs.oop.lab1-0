@@ -9,9 +9,9 @@ CONFIG -= app_bundle
 
 SOURCES += \
         circle.cpp \
+        factory.cpp \
         figure.cpp \
         main.cpp \
-        mainmenu.cpp \
         menu.cpp \
         params.cpp \
         paramsfrominput.cpp \
@@ -24,8 +24,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     circle.h \
+    factory.h \
     figure.h \
-    mainmenu.h \
     menu.h \
     params.h \
     paramsfrominput.h \
