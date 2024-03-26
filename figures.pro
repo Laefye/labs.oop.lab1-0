@@ -11,6 +11,8 @@ SOURCES += \
         circle.cpp \
         figure.cpp \
         main.cpp \
+        mainmenu.cpp \
+        menu.cpp \
         params.cpp \
         paramsfrominput.cpp \
         rectangle.cpp
@@ -23,6 +25,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     circle.h \
     figure.h \
+    mainmenu.h \
+    menu.h \
     params.h \
     paramsfrominput.h \
     point.h \
