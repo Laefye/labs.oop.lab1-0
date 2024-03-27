@@ -1,14 +1,6 @@
 #include "figures.h"
 #include <algorithm>
 
-const char* ImpossibleCasting::what() const noexcept {
-    return "Impossible to cast figure";
-}
-
-const char* IncorrectFigureIndex::what() const noexcept {
-    return "Incorrect figure index";
-}
-
 Figures::Figures()
 {
 

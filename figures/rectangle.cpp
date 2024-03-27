@@ -1,9 +1,5 @@
 #include "rectangle.h"
 
-IncorrectRectanglePoint::IncorrectRectanglePoint(const std::string& point) {
-    reason = "\""+ point + "\" has a incorrect position";
-}
-
 Rectangle::Rectangle(const Params& params) : Figure(params)
 {
     params.get("left top", this->leftTop);
@@ -18,12 +14,3 @@ double Rectangle::getArea() const {
     double height = this->leftTop.y - this->rightBottom.y;
     return width * height;
 }
-
-RectangleFactory::RectangleFactory(const Params& params) : Factory("Rectangle", params) {
-
-}
-
-std::shared_ptr<Figure> RectangleFactory::create() {
-    return std::shared_ptr<Figure>(new Rectangle(this->getParams()));
-}
-

@@ -1,17 +1,7 @@
 #ifndef PARAMS_H
 #define PARAMS_H
 #include <string>
-#include <exception>
-#include "point.h"
-
-class BadParams : public std::exception {
-protected:
-    std::string reason;
-public:
-    BadParams() = default;
-    BadParams(const std::string& key);
-    const char* what() const noexcept override;
-};
+#include "figures/point.h"
 
 class Params
 {

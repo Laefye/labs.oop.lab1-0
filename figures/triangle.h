@@ -1,12 +1,7 @@
 #ifndef TRIANGLE_H
 #define TRIANGLE_H
 #include "figure.h"
-#include "factory.h"
-
-class SameCoordinate : public BadParams {
-public:
-    SameCoordinate();
-};
+#include "exceptions/samecoordinate.h"
 
 class Triangle : public Figure
 {
@@ -19,14 +14,5 @@ public:
 
     double getArea() const override;
 };
-
-
-class TriangleFactory : public Factory {
-public:
-    TriangleFactory(const Params& params);
-
-    std::shared_ptr<Figure> create() override;
-};
-
 
 #endif // TRIANGLE_H

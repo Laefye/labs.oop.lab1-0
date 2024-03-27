@@ -2,12 +2,7 @@
 #define CIRCLE_H
 #include "figure.h"
 #include "point.h"
-#include "factory.h"
-
-class IncorrectCircleRadius : public BadParams {
-public:
-    IncorrectCircleRadius();
-};
+#include "exceptions/incorrectcircleradius.h"
 
 class Circle : public Figure
 {
@@ -19,13 +14,6 @@ public:
 
     std::string getParams() const override;
     double getArea() const override;
-};
-
-class CircleFactory : public Factory {
-public:
-    CircleFactory(const Params& params);
-
-    std::shared_ptr<Figure> create() override;
 };
 
 #endif // CIRCLE_H

@@ -2,10 +2,6 @@
 #include <cmath>
 #include <iostream>
 
-SameCoordinate::SameCoordinate() {
-    this->reason = "Some points has same coordintate";
-}
-
 Triangle::Triangle(const Params& params) : Figure(params)
 {
     params.get("first point", this->points[0]);
@@ -32,12 +28,3 @@ double Triangle::getArea() const {
     double halfPerimetr = (first + second + third) / 2;
     return sqrt(halfPerimetr * (halfPerimetr - first) * (halfPerimetr - second) * (halfPerimetr - third));
 }
-
-TriangleFactory::TriangleFactory(const Params& params) : Factory("Triangle", params) {
-
-}
-
-std::shared_ptr<Figure> TriangleFactory::create() {
-    return std::shared_ptr<Figure>(new Triangle(this->getParams()));
-}
-

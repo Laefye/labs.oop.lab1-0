@@ -1,9 +1,10 @@
 #ifndef PARAMSFROMINPUT_H
 #define PARAMSFROMINPUT_H
 #include <string>
+#include <iostream>
 #include "params.h"
-#include "point.h"
-
+#include "figures/point.h"
+#include "exceptions/badparams.h"
 
 class ParamsFromInput : public Params
 {

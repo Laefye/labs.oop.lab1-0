@@ -1,5 +1,4 @@
 #include "paramsfrominput.h"
-#include <iostream>
 
 void ParamsFromInput::get(const std::string &key, std::string &output) const {
     std::cout << key << ": ";

@@ -5,10 +5,11 @@
 #include <iostream>
 #include <memory>
 #include "paramsfrominput.h"
-#include "circle.h"
-#include "rectangle.h"
-#include "triangle.h"
-#include "figures.h"
+#include "figures/figures.h"
+#include "factories/factory.h"
+#include "factories/circlefactory.h"
+#include "factories/rectanglefactory.h"
+#include "factories/trianglefactory.h"
 
 
 class Menu;

@@ -1,6 +1,6 @@
 #ifndef FACTORY_H
 #define FACTORY_H
-#include "figure.h"
+#include "../figures/figure.h"
 #include "memory"
 
 

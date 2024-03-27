@@ -1,7 +1,7 @@
 #include <vector>
 #include <iostream>
 #include "menu.h"
-#include "figures.h"
+#include "figures/figures.h"
 
 int main()
 {

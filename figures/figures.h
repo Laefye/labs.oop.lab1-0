@@ -3,19 +3,9 @@
 #include "circle.h"
 #include "triangle.h"
 #include "rectangle.h"
+#include "exceptions/incorrectfigureindex.h"
 #include <vector>
 #include <memory>
-#include <exception>
-
-class ImpossibleCasting : public std::exception {
-public:
-    const char* what() const noexcept override;
-};
-
-class IncorrectFigureIndex : public std::exception {
-public:
-    const char* what() const noexcept override;
-};
 
 class Figures
 {
