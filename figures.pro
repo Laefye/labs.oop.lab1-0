@@ -11,11 +11,14 @@ SOURCES += \
         circle.cpp \
         factory.cpp \
         figure.cpp \
+        figures.cpp \
         main.cpp \
         menu.cpp \
         params.cpp \
         paramsfrominput.cpp \
-        rectangle.cpp
+        point.cpp \
+        rectangle.cpp \
+        triangle.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -26,8 +29,10 @@ HEADERS += \
     circle.h \
     factory.h \
     figure.h \
+    figures.h \
     menu.h \
     params.h \
     paramsfrominput.h \
     point.h \
-    rectangle.h
+    rectangle.h \
+    triangle.h

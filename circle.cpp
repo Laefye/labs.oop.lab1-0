@@ -17,6 +17,10 @@ double Circle::getArea() const {
     return M_PI * this->radius * this->radius;
 }
 
+std::string Circle::getParams() const {
+    return Figure::getParams() + " center: " + this->center.toString() + " radius: " + std::to_string(this->radius);
+}
+
 CircleFactory::CircleFactory(const Params& params) : Factory("Circle", params) {
 
 }

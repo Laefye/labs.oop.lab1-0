@@ -9,6 +9,10 @@ private:
 public:
     Figure(const Params& params);
 
+    const std::string& getName() const;
+
+    virtual std::string getParams() const;
+
     virtual double getArea() const = 0;
 };
 

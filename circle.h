@@ -17,6 +17,7 @@ private:
 public:
     Circle(const Params& params);
 
+    std::string getParams() const override;
     double getArea() const override;
 };
 

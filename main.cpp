@@ -1,12 +1,11 @@
 #include <vector>
 #include <iostream>
-#include <algorithm>
-#include "paramsfrominput.h"
-#include "rectangle.h"
 #include "menu.h"
+#include "figures.h"
 
 int main()
 {
-    Menu menu;
+    Figures figures;
+    Menu menu{figures};
     menu.open();
 }
