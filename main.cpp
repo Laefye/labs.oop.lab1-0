@@ -1,11 +1,9 @@
-#include <vector>
-#include <iostream>
+#include "shapes/shapes.h"
 #include "menu.h"
-#include "figures/figures.h"
 
 int main()
 {
-    Figures figures;
-    Menu menu{figures};
+    Shapes shapes;
+    Menu menu{shapes};
     menu.open();
 }

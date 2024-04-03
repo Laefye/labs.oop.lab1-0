@@ -1,0 +1,11 @@
+{
+    "C_Cpp.default.cppStandard": "c++14",
+    "C_Cpp.default.cStandard": "c99",
+    "C_Cpp.default.systemIncludePath": [
+        "C:\\Qt\\Qt5.12.12\\5.12.12\\mingw73_32\\include",
+        "C:\\Qt\\Qt5.12.12\\Tools\\mingw730_32\\lib\\gcc\\i686-w64-mingw32\\7.3.0\\include\\c++"
+    ],
+    "files.associations": {
+        "iostream": "cpp"
+    }
+}
