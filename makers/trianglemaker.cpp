@@ -5,7 +5,7 @@ TriangleMaker::TriangleMaker() : Maker("Triangle")
 
 }
 
-Shape* TriangleMaker::make() {
+Figure* TriangleMaker::make() {
     std::string name;
     Point first;
     Point second;

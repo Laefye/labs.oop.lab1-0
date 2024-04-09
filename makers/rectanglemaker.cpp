@@ -5,7 +5,7 @@ RectangleMaker::RectangleMaker() : Maker("Rectangle")
 
 }
 
-Shape* RectangleMaker::make() {
+Figure* RectangleMaker::make() {
     std::string name;
     Point leftTop;
     Point rightBottom;

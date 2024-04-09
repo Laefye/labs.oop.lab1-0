@@ -4,7 +4,7 @@ CircleMaker::CircleMaker() : Maker("Circle") {
 
 }
 
-Shape* CircleMaker::make() {
+Figure* CircleMaker::make() {
     std::string name;
     Point center;
     double radius;

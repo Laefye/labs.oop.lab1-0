@@ -1,10 +1,10 @@
 #ifndef TRIANGLE_H
 #define TRIANGLE_H
 #include "point.h"
-#include "shape.h"
+#include "figure.h"
 #include "exceptions/samepointexception.h"
 
-class Triangle : public Shape
+class Triangle : public Figure
 {
 private:
     Point points[3];

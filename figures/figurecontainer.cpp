@@ -1,26 +1,26 @@
-#include "shapes.h"
+#include "figurecontainer.h"
 
-Shapes::Shapes()
+FigureContainer::FigureContainer()
 {
 
 }
 
-Shapes::~Shapes() {
-    for (Shape* figure : this->figures) {
+FigureContainer::~FigureContainer() {
+    for (Figure* figure : this->figures) {
         delete figure;
     }
 }
 
-void Shapes::add(Shape* figure) {
+void FigureContainer::add(Figure* figure) {
     figures.push_back(figure);
 }
 
 
-const std::vector<Shape*>& Shapes::getVector() {
+const std::vector<Figure*>& FigureContainer::getVector() {
     return this->figures;
 }
 
-std::string Shapes::getType(Shape* figure) const {
+std::string FigureContainer::getType(Figure* figure) const {
     std::string type = "Figure";
     if (dynamic_cast<Circle*>(figure)) {
         type = "Circle";
@@ -32,23 +32,23 @@ std::string Shapes::getType(Shape* figure) const {
     return type;
 }
 
-double Shapes::sumAreas() const {
+double FigureContainer::sumAreas() const {
     double sum = 0;
-    for (Shape* figure : this->figures) {
+    for (Figure* figure : this->figures) {
         sum += figure->getArea();
     }
     return sum;
 }
 
-bool compare(Shape* a, Shape* b) {
+bool compare(Figure* a, Figure* b) {
     return a->getArea() < b->getArea();
 }
 
-void Shapes::sort() {
+void FigureContainer::sort() {
     std::sort(this->figures.begin(), this->figures.end(), compare);
 }
 
-void Shapes::remove(size_t index) {
+void FigureContainer::remove(size_t index) {
     if (index >= figures.size()) {
         throw IncorrectFigureIndexException();
     }
@@ -56,8 +56,8 @@ void Shapes::remove(size_t index) {
     figures.erase(figures.begin() + index);
 }
 
-void Shapes::removeBiggerArea(double area) {
-    std::vector<Shape*>::iterator iter = this->figures.begin();
+void FigureContainer::removeBiggerArea(double area) {
+    std::vector<Figure*>::iterator iter = this->figures.begin();
     while (iter != this->figures.end()) {
         if ((*iter)->getArea() > area) {
             this->figures.erase(iter);

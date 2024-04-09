@@ -1,11 +1,11 @@
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
-#include "shape.h"
+#include "figure.h"
 #include "point.h"
 #include "exceptions/incorrectrectanglepointexception.h"
 
 
-class Rectangle : public Shape
+class Rectangle : public Figure
 {
 private:
     Point leftTop;

@@ -1,10 +1,10 @@
 #ifndef CIRCLE_H
 #define CIRCLE_H
-#include "shape.h"
+#include "figure.h"
 #include "point.h"
 #include "exceptions/incorrectradiusexception.h"
 
-class Circle : public Shape
+class Circle : public Figure
 {
 private:
     double radius;

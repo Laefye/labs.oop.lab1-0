@@ -1,9 +1,9 @@
 #include "menu.h"
 
-Menu::Menu(Shapes& shapes) : shapes(shapes) {
+Menu::Menu(FigureContainer& container) : container(container) {
     this->options.push_back(new Option("Create a shape", &Menu::createShape));
-    this->options.push_back(new Option("List shapes with params", &Menu::listWithParams));
-    this->options.push_back(new Option("List shapes with areas", &Menu::listWithAreas));
+    this->options.push_back(new Option("List figures with params", &Menu::listWithParams));
+    this->options.push_back(new Option("List figures with areas", &Menu::listWithAreas));
     this->options.push_back(new Option("Sort by areas", &Menu::sort));
     this->options.push_back(new Option("Remove by index", &Menu::removeByIndex));
     this->options.push_back(new Option("Remove more than input area", &Menu::removeMoreArea));
@@ -48,7 +48,7 @@ void Menu::createShape() {
     size_t choice;
     if (std::cin >> choice && choice >= 1 && choice <= this->makers.size()) {
         try {
-            this->shapes.add(this->makers[choice - 1]->make());
+            this->container.add(this->makers[choice - 1]->make());
         } catch (std::exception& err) {
             std::cout << "Error: " << err.what() << std::endl;
         }
@@ -57,26 +57,26 @@ void Menu::createShape() {
 
 void Menu::listWithParams() {
     size_t i = 1;
-    for (Shape* shape : this->shapes.getVector()) {
+    for (Figure* shape : this->container.getVector()) {
         std::string params = "";
         shape->outputParams(params);
-        std::cout << i++ << ") " << this->shapes.getType(shape) << " (" << params << ")" << std::endl;
+        std::cout << i++ << ") " << this->container.getType(shape) << " (" << params << ")" << std::endl;
     }
 }
 
 void Menu::listWithAreas() {
     size_t i = 1;
-    for (Shape* shape : this->shapes.getVector()) {
-        std::cout << i++ << ") " << this->shapes.getType(shape) << " = " << shape->getArea() << std::endl;
+    for (Figure* shape : this->container.getVector()) {
+        std::cout << i++ << ") " << this->container.getType(shape) << " = " << shape->getArea() << std::endl;
     }
 }
 
 void Menu::sumAreas() {
-    std::cout << "Sum: " << this->shapes.sumAreas() << std::endl;
+    std::cout << "Sum: " << this->container.sumAreas() << std::endl;
 }
 
 void Menu::sort() {
-    this->shapes.sort();
+    this->container.sort();
     this->listWithAreas();
 }
 
@@ -85,7 +85,7 @@ void Menu::removeByIndex() {
     size_t index;
     if (std::cin >> index) {
         try {
-            this->shapes.remove(index - 1);
+            this->container.remove(index - 1);
         }  catch (IncorrectFigureIndexException& figure) {
             std::cout << "Error: " << figure.what() << std::endl;
         }
@@ -97,7 +97,7 @@ void Menu::removeMoreArea() {
     std::cout << "Area: ";
     double area;
     if (std::cin >> area) {
-        this->shapes.removeBiggerArea(area);
+        this->container.removeBiggerArea(area);
     }
     this->listWithAreas();
 }

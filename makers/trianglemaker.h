@@ -1,7 +1,7 @@
 #ifndef TRIANGLEMAKER_H
 #define TRIANGLEMAKER_H
 #include "maker.h"
-#include "shapes/triangle.h"
+#include "figures/triangle.h"
 
 
 class TriangleMaker : public Maker
@@ -9,7 +9,7 @@ class TriangleMaker : public Maker
 public:
     TriangleMaker();
 
-    Shape* make() override;
+    Figure* make() override;
 };
 
 #endif // TRIANGLEMAKER_H

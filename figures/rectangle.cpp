@@ -1,6 +1,6 @@
 #include "rectangle.h"
 
-Rectangle::Rectangle(std::string& name, const Point& leftTop, const Point& rightBottom) : Shape(name)
+Rectangle::Rectangle(std::string& name, const Point& leftTop, const Point& rightBottom) : Figure(name)
 {
     this->leftTop = leftTop;
     this->rightBottom = rightBottom;
@@ -16,6 +16,6 @@ double Rectangle::getArea() {
 }
 
 void Rectangle::outputParams(std::string& output) {
-    Shape::outputParams(output);
+    Figure::outputParams(output);
     output += " left top: " + this->leftTop.toString() + " right bottom: " + this->rightBottom.toString();
 }

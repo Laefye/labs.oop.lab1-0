@@ -1,18 +1,18 @@
-#ifndef SHAPE_H
-#define SHAPE_H
+#ifndef FIGURE_H
+#define FIGURE_H
 #include <string>
 
 
-class Shape
+class Figure
 {
 private:
     std::string name;
 public:
-    Shape(const std::string& name);
-    virtual ~Shape() = default;
+    Figure(const std::string& name);
+    virtual ~Figure() = default;
 
     virtual double getArea() = 0;
     virtual void outputParams(std::string& params);
 };
 
-#endif // SHAPE_H
+#endif // FIGURE_H

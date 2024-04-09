@@ -1,9 +1,9 @@
-#include "shapes/shapes.h"
+#include "figures/figurecontainer.h"
 #include "menu.h"
 
 int main()
 {
-    Shapes shapes;
-    Menu menu{shapes};
+    FigureContainer container;
+    Menu menu{container};
     menu.open();
 }

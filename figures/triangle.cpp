@@ -1,7 +1,7 @@
 #include "triangle.h"
 #include "cmath"
 
-Triangle::Triangle(const std::string& name, const Point& first, const Point& second, const Point& third) : Shape(name)
+Triangle::Triangle(const std::string& name, const Point& first, const Point& second, const Point& third) : Figure(name)
 {
     this->points[0] = first;
     this->points[1] = second;
@@ -30,6 +30,6 @@ double Triangle::getArea() {
 }
 
 void Triangle::outputParams(std::string& output) {
-    Shape::outputParams(output);
+    Figure::outputParams(output);
     output += " first: " + this->points[0].toString() + " second: " + this->points[1].toString() + " third: " + this->points[2].toString();
 }

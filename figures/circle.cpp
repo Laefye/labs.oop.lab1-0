@@ -1,7 +1,7 @@
 #include "circle.h"
 #include <cmath>
 
-Circle::Circle(const std::string& name, const Point& center, double radius) : Shape(name) {
+Circle::Circle(const std::string& name, const Point& center, double radius) : Figure(name) {
     this->center = center;
     if (radius <= 0) {
         throw IncorrectRadiusException();
@@ -14,6 +14,6 @@ double Circle::getArea() {
 }
 
 void Circle::outputParams(std::string& output) {
-    Shape::outputParams(output);
+    Figure::outputParams(output);
     output += " center: " + this->center.toString() + " radius: " + std::to_string(this->radius);
 }

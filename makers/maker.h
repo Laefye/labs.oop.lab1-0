@@ -1,7 +1,7 @@
 #ifndef MAKER_H
 #define MAKER_H
-#include "shapes/shape.h"
-#include "shapes/point.h"
+#include "figures/figure.h"
+#include "figures/point.h"
 #include "exceptions/incorrectinputexception.h"
 #include <string>
 
@@ -19,7 +19,7 @@ public:
 
     std::string getName() const;
 
-    virtual Shape* make() = 0;
+    virtual Figure* make() = 0;
 };
 
 #endif // MAKER_H

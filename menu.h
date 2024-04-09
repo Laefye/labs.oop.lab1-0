@@ -4,7 +4,7 @@
 #include <string>
 #include <iostream>
 #include <memory>
-#include "shapes/shapes.h"
+#include "figures/figurecontainer.h"
 #include "makers/maker.h"
 #include "makers/circlemaker.h"
 #include "makers/rectanglemaker.h"
@@ -20,7 +20,7 @@ typedef std::pair<std::string, void (Menu::*)()> Option;
 class Menu
 {
 private:
-    Shapes& shapes;
+    FigureContainer& container;
     std::vector<Option*> options;
     std::vector<Maker*> makers;
 
@@ -34,7 +34,7 @@ private:
     void removeByIndex();
     void removeMoreArea();
 public:
-    Menu(Shapes& shapes);
+    Menu(FigureContainer& figures);
     ~Menu();
     void open();
 
