@@ -3,17 +3,33 @@
 
 Triangle::Triangle(const std::string& name, const Point& first, const Point& second, const Point& third) : Figure(name)
 {
-    this->points[0] = first;
-    this->points[1] = second;
-    this->points[2] = third;
+    this->first = first;
+    this->second = second;
+    this->third = third;
 
-    for (size_t i = 0; i < 3; i++) {
-        for (size_t j = i + 1; j < 3; j++) {
-            if (this->points[i].x == this->points[j].x && this->points[i].y == this->points[j].y) {
-                throw SamePointException(i+1, j+1);
-            }
-        }
+    if (checkEquals(first, second)) {
+        throw SamePointException(1, 2);
     }
+    if (checkEquals(second, third)) {
+        throw SamePointException(2, 3);
+    }
+    if (checkEquals(first, third)) {
+        throw SamePointException(1, 3);
+    }
+
+    double firstLength = this->getDistance(this->first, this->second);
+    double secondLength = this->getDistance(this->second, this->third);
+    double thirdLength = this->getDistance(this->first, this->third);
+    double max = std::fmax(firstLength, std::fmax(secondLength, thirdLength));
+    double min = std::fmin(firstLength, std::fmin(secondLength, thirdLength));
+    double middle = firstLength + secondLength + thirdLength - max - min;
+    if (max >= min + middle) {
+        throw ImpossibleTriangleException();
+    }
+}
+
+bool Triangle::checkEquals(const Point &a, const Point &b) {
+    return a.x == b.x && a.y == b.y;
 }
 
 double Triangle::getDistance(const Point &start, const Point &end) const {
@@ -22,14 +38,14 @@ double Triangle::getDistance(const Point &start, const Point &end) const {
 }
 
 double Triangle::getArea() {
-    double first = this->getDistance(this->points[0], this->points[1]);
-    double second = this->getDistance(this->points[1], this->points[2]);
-    double third = this->getDistance(this->points[0], this->points[2]);
+    double first = this->getDistance(this->first, this->second);
+    double second = this->getDistance(this->second, this->third);
+    double third = this->getDistance(this->first, this->third);
     double halfPerimetr = (first + second + third) / 2;
     return sqrt(halfPerimetr * (halfPerimetr - first) * (halfPerimetr - second) * (halfPerimetr - third));
 }
 
 void Triangle::outputParams(std::string& output) {
     Figure::outputParams(output);
-    output += " first: " + this->points[0].toString() + " second: " + this->points[1].toString() + " third: " + this->points[2].toString();
+    output += " first: " + this->first.toString() + " second: " + this->second.toString() + " third: " + this->third.toString();
 }
