@@ -4,6 +4,7 @@
 #include "circle.h"
 #include "rectangle.h"
 #include "triangle.h"
+#include "polygon.h"
 #include "exceptions/incorrectfigureindexexception.h"
 #include <vector>
 #include <algorithm>

@@ -9,6 +9,7 @@
 #include "makers/circlemaker.h"
 #include "makers/rectanglemaker.h"
 #include "makers/trianglemaker.h"
+#include "makers/polygonmaker.h"
 #include "exceptions/incorrectfigureindexexception.h"
 
 

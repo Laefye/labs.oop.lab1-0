@@ -4,6 +4,8 @@
 #include "figures/point.h"
 #include "exceptions/incorrectinputexception.h"
 #include <string>
+#include <vector>
+#include "figures/point.h"
 
 class Maker
 {
@@ -13,6 +15,7 @@ protected:
     void read(const std::string& name, Point& point);
     void read(const std::string& name, double& number);
     void read(const std::string& name, std::string& str);
+    void read(const std::string& name, std::vector<Point>& vector);
 public:
     Maker(const std::string& name);
     virtual ~Maker() = default;

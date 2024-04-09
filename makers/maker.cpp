@@ -30,3 +30,18 @@ void Maker::read(const std::string& name, std::string& str) {
         throw IncorrectInputException();
     }
 }
+
+void Maker::read(const std::string& name, std::vector<Point>& vector) {
+    std::cout << name << " count: ";
+    size_t count;
+    if (!(std::cin >> count)) {
+        throw IncorrectInputException();
+    }
+    vector.resize(count);
+    for (size_t i = 0; i < count; i++) {
+        std::cout << name << " element " << i + 1 << ": ";
+        if (!(std::cin >> vector[i].x >> vector[i].y)) {
+            throw IncorrectInputException();
+        }
+    }
+}

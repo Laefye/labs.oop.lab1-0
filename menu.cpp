@@ -1,7 +1,7 @@
 #include "menu.h"
 
 Menu::Menu(FigureContainer& container) : container(container) {
-    this->options.push_back(new Option("Create a shape", &Menu::createShape));
+    this->options.push_back(new Option("Create a figure", &Menu::createShape));
     this->options.push_back(new Option("List figures with params", &Menu::listWithParams));
     this->options.push_back(new Option("List figures with areas", &Menu::listWithAreas));
     this->options.push_back(new Option("Sort by areas", &Menu::sort));
@@ -10,6 +10,7 @@ Menu::Menu(FigureContainer& container) : container(container) {
     this->makers.push_back(new CircleMaker());
     this->makers.push_back(new RectangleMaker());
     this->makers.push_back(new TriangleMaker());
+    this->makers.push_back(new PolygonMaker());
 }
 
 Menu::~Menu() {

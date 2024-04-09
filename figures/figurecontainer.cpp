@@ -28,6 +28,8 @@ std::string FigureContainer::getType(Figure* figure) const {
         type = "Rectangle";
     } else if (dynamic_cast<Triangle*>(figure)) {
         type = "Triangle";
+    } else if (dynamic_cast<Polygon*>(figure)) {
+        type = "Polygon";
     }
     return type;
 }
@@ -60,8 +62,9 @@ void FigureContainer::removeBiggerArea(double area) {
     std::vector<Figure*>::iterator iter = this->figures.begin();
     while (iter != this->figures.end()) {
         if ((*iter)->getArea() > area) {
-            this->figures.erase(iter);
-            delete (*iter);
+            Figure* figure = *iter;
+            iter = this->figures.erase(iter);
+            delete figure;
         } else {
             iter++;
         }

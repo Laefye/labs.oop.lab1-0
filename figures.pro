@@ -8,6 +8,7 @@ CONFIG -= app_bundle
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    exceptions/impossiblepolygonexception.cpp \
     exceptions/impossibletriangleexception.cpp \
     exceptions/incorrectfigureindexexception.cpp \
     exceptions/incorrectinputexception.cpp \
@@ -16,6 +17,8 @@ SOURCES += \
     exceptions/samepointexception.cpp \
     figures/figure.cpp \
     figures/figurecontainer.cpp \
+    figures/polygon.cpp \
+    makers/polygonmaker.cpp \
     makers/rectanglemaker.cpp \
     makers/trianglemaker.cpp \
     menu.cpp \
@@ -33,6 +36,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS +=  \
+    exceptions/impossiblepolygonexception.h \
     exceptions/impossibletriangleexception.h \
     exceptions/incorrectfigureindexexception.h \
     exceptions/incorrectinputexception.h \
@@ -41,6 +45,8 @@ HEADERS +=  \
     exceptions/samepointexception.h \
     figures/figure.h \
     figures/figurecontainer.h \
+    figures/polygon.h \
+    makers/polygonmaker.h \
     makers/rectanglemaker.h \
     makers/trianglemaker.h \
     menu.h \
