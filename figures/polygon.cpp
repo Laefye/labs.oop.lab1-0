@@ -78,3 +78,11 @@ double Polygon::getArea() {
     sub += (points[points.capacity() - 1].x + points[0].x)*(points[points.capacity() - 1].y - points[0].y);
     return std::fabs(sub) / 2;
 }
+
+void Polygon::outputParams(std::string& params) {
+    Figure::outputParams(params);
+    for (size_t i = 0; i < points.capacity(); i++) {
+        params += " " + std::to_string(i+1) + ": " + points[i].toString();
+    }
+}
+
