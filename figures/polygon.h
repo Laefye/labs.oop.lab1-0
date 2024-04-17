@@ -21,7 +21,7 @@ public:
     Polygon(const std::string& name, const std::vector<Point> points);
 
     double getArea() override;
-    void outputParams(std::string& params) override;
+    std::string getParams() override;
 };
 
 #endif // POLYGON_H

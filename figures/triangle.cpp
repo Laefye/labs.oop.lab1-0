@@ -45,7 +45,6 @@ double Triangle::getArea() {
     return sqrt(halfPerimetr * (halfPerimetr - first) * (halfPerimetr - second) * (halfPerimetr - third));
 }
 
-void Triangle::outputParams(std::string& output) {
-    Figure::outputParams(output);
-    output += " first: " + this->first.toString() + " second: " + this->second.toString() + " third: " + this->third.toString();
+std::string Triangle::getParams() {
+    return "Triangle " + Figure::getParams() + " first: " + this->first.toString() + " second: " + this->second.toString() + " third: " + this->third.toString();
 }

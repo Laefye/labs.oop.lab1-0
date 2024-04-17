@@ -13,7 +13,6 @@ double Circle::getArea() {
     return M_PI * this->radius * this->radius;
 }
 
-void Circle::outputParams(std::string& output) {
-    Figure::outputParams(output);
-    output += " center: " + this->center.toString() + " radius: " + std::to_string(this->radius);
+std::string Circle::getParams() {
+    return "Circle " + Figure::getParams() + " center: " + this->center.toString() + " radius: " + std::to_string(this->radius);
 }

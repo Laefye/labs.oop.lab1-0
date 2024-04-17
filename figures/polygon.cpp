@@ -79,10 +79,11 @@ double Polygon::getArea() {
     return std::fabs(sub) / 2;
 }
 
-void Polygon::outputParams(std::string& params) {
-    Figure::outputParams(params);
+std::string Polygon::getParams() {
+    std::string params = "Polygon " + Figure::getParams();
     for (size_t i = 0; i < points.capacity(); i++) {
         params += " " + std::to_string(i+1) + ": " + points[i].toString();
     }
+    return params;
 }
 

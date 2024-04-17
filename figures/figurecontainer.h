@@ -20,7 +20,6 @@ public:
     void add(Figure* figure);
 
     const std::vector<Figure*>& getVector();
-    std::string getType(Figure* figure) const;
     double sumAreas() const;
     void sort();
     void remove(size_t index);

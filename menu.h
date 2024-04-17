@@ -27,13 +27,14 @@ private:
 
     void close();
 
-    void createShape();
+    void createFigure();
     void listWithParams();
     void listWithAreas();
     void sumAreas();
     void sort();
     void removeByIndex();
     void removeMoreArea();
+    void clearFromInput();
 public:
     Menu(FigureContainer& figures);
     ~Menu();

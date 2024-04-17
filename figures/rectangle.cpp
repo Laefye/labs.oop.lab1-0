@@ -15,7 +15,6 @@ double Rectangle::getArea() {
     return width * height;
 }
 
-void Rectangle::outputParams(std::string& output) {
-    Figure::outputParams(output);
-    output += " left top: " + this->leftTop.toString() + " right bottom: " + this->rightBottom.toString();
+std::string Rectangle::getParams() {
+    return "Rectangle " + Figure::getParams() + " left top: " + this->leftTop.toString() + " right bottom: " + this->rightBottom.toString();
 }

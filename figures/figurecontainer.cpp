@@ -20,20 +20,6 @@ const std::vector<Figure*>& FigureContainer::getVector() {
     return this->figures;
 }
 
-std::string FigureContainer::getType(Figure* figure) const {
-    std::string type = "Figure";
-    if (dynamic_cast<Circle*>(figure)) {
-        type = "Circle";
-    } else if (dynamic_cast<Rectangle*>(figure)) {
-        type = "Rectangle";
-    } else if (dynamic_cast<Triangle*>(figure)) {
-        type = "Triangle";
-    } else if (dynamic_cast<Polygon*>(figure)) {
-        type = "Polygon";
-    }
-    return type;
-}
-
 double FigureContainer::sumAreas() const {
     double sum = 0;
     for (Figure* figure : this->figures) {

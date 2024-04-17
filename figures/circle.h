@@ -13,7 +13,7 @@ public:
     Circle(const std::string& name, const Point& point, double radius);
 
     double getArea() override;
-    void outputParams(std::string& output) override;
+    std::string getParams() override;
 };
 
 #endif // CIRCLE_H

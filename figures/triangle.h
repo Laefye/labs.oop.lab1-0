@@ -17,7 +17,7 @@ public:
     Triangle(const std::string& name, const Point& first, const Point& second, const Point& third);
 
     double getArea() override;
-    void outputParams(std::string &params) override;
+    std::string getParams() override;
 };
 
 #endif // TRIANGLE_H

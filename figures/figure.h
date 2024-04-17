@@ -12,7 +12,7 @@ public:
     virtual ~Figure() = default;
 
     virtual double getArea() = 0;
-    virtual void outputParams(std::string& params);
+    virtual std::string getParams();
 };
 
 #endif // FIGURE_H
